@@ -13,7 +13,7 @@ class Alien(Sprite):
 		#加载外形人图像，并设置rect属性
 		self.image = pygame.image.load('images/alien.bmp')
 		self.rect = self.image.get_rect()
-	
+
 		#每个外星人最初在屏幕左上角附近
 		self.rect.x = self.rect.width
 		self.rect.y = self.rect.height
