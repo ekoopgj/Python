@@ -15,6 +15,7 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
 	elif event.key == pygame.K_SPACE:
 		fire_bullet(ai_settings, screen, ship, bullets)
 	elif event.key ==pygame.K_q:
+		pygame.quit()
 		sys.exit()
 
 def fire_bullet(ai_settings, screen, ship, bullets):
@@ -176,12 +177,12 @@ def change_fleet_direction(ai_settings, aliens):
 
 def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
 	"""响应被外星人撞到的飞船"""
-	if stats.ship_left > 0:
+	if stats.ships_left > 0:
 		#将ship_left减1
-		stats.ship_left -= 1
+		stats.ships_left -= 1
 	else:
 		stats.game_active = False
-		pygame.mouse.set_visiable(True)
+		pygame.mouse.set_visible(True)
 
 	# 更新记分牌
 	sb.prep_ships()
